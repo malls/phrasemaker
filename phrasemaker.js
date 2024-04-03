@@ -1,7 +1,6 @@
-
 const adjectives = {
-  "description": "A list of English adjectives.",
-  "adjs":
+  description: "A list of English adjectives.",
+  adjs:
     [ "Aristotelian",
       "Arthurian",
       "Bohemian",
@@ -1970,12 +1969,13 @@ function getRandomArbitrary(min, max) {
 
 function generateName() {
 
-  let adjIndex = getRandomArbitrary(0, adjectives.adjs.length);
-  let nounIndex = getRandomArbitrary(0, nouns.nouns.length);
+  const adjIndex = getRandomArbitrary(0, adjectives.adjs.length);
+  const nounIndex = getRandomArbitrary(0, nouns.nouns.length);
 
   return `${adjectives.adjs[adjIndex]} ${nouns.nouns[nounIndex]}`;
 }
 
-for (var i = 1; i > 0; i--) {
-  console.log(generateName());
-}
+module.exports = {
+  getRandomArbitrary,
+  generateName
+};
